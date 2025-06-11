@@ -91,7 +91,7 @@ La notación Big O permite describir el **crecimiento del tiempo de ejecución**
 
 **[Claudio Andrés Díaz Vargas]**  
 Análisis de Algoritmo y Notación Big O /
-[Módulo 2 - Clase N° 4]  
+Módulo 2 - Clase N° 4
 [Año: 2025]
 
 ---
