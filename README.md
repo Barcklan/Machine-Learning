@@ -78,22 +78,22 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 | Escalabilidad            | ❌ Mala               | ✅ Excelente          |
 
 ---
-´´# -----------------------------------------
-# 3. Medición de tiempo para todos los casos
-# -----------------------------------------
+      ´´# -----------------------------------------
+         # 3. Medición de tiempo para todos los casos
+      # -----------------------------------------
 
-resultados = {
+      resultados = {
     "lineal": {"mejor": [], "medio": [], "peor": []},
     "binaria": {"mejor": [], "medio": [], "peor": []}
-}
+      }
 
-print(f"{'Caso':>6} | {'Tamaño':>10} | {'Lineal (s)':>12} | {'Binaria (s)':>12}")
-print("-" * 50)
+      print(f"{'Caso':>6} | {'Tamaño':>10} | {'Lineal (s)':>12} | {'Binaria (s)':>12}")
+      print("-" * 50)
 
-for caso in ["mejor", "medio", "peor"]:
-    for i in range(len(tamaños)):
-        lista = listas[i]
-        objetivo = objetivos[caso][i]
+      for caso in ["mejor", "medio", "peor"]:
+          for i in range(len(tamaños)):
+             lista = listas[i]
+              objetivo = objetivos[caso][i]
 
         # Medir tiempos
         t_lineal = timeit.timeit(lambda: busqueda_lineal(lista, objetivo), number=1)
