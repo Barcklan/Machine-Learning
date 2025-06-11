@@ -78,6 +78,11 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 | Escalabilidad            | ❌ Mala               | ✅ Excelente          |
 
 ---
+
+## 🖼 Capturas de Pantalla
+
+### 🧾 Código en el editor
+
       import timeit
       import matplotlib.pyplot as plt
 
@@ -195,14 +200,20 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 
 ---
 
-## 🖼 Capturas de Pantalla
 
-### 🧾 Código en el editor
-![Captura del código](captura_codigo.png)
+### 📉 Salida
 
-### 📉 Salida y gráfica
-![Gráfico generado](comparacion_todos_los_casos.png)
-
+ Caso |     Tamaño |   Lineal (s) |  Binaria (s)
+--------------------------------------------------
+ mejor |     10,000 |     0.000005 |     0.000011
+ mejor |    100,000 |     0.000004 |     0.000013
+ mejor |  1,000,000 |     0.000004 |     0.000015
+ medio |     10,000 |     0.000317 |     0.000010
+ medio |    100,000 |     0.003578 |     0.000010
+ medio |  1,000,000 |     0.020111 |     0.000017
+  peor |     10,000 |     0.000395 |     0.000005
+  peor |    100,000 |     0.017613 |     0.000012
+  peor |  1,000,000 |     0.038467 |     0.000008
 ---
 
 ## ✅ Conclusiones
