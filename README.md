@@ -13,7 +13,7 @@ Demostrar comprensión de los conceptos fundamentales del análisis de algoritmo
 ### 🔍 Búsqueda Lineal (`O(n)`)
 Recorre la lista secuencialmente hasta encontrar el objetivo. Su rendimiento depende directamente del tamaño de la lista y de la posición del valor buscado.
 
-### 🔎 Búsqueda Binaria (`O(log n)`)
+### 🔍 Búsqueda Binaria (`O(log n)`)
 Funciona solo en listas ordenadas. Divide la lista a la mitad en cada paso, reduciendo drásticamente el número de comparaciones necesarias.
 
 ---
