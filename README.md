@@ -50,7 +50,7 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 
 ## 📈 Resultados Obtenidos
 
-![Gráfico de comparación](comparacion_todos_los_casos.png)
+![Gráfico de comparación](descarga.png)
 
 ### 🔍 Búsqueda Lineal (O(n))
 
