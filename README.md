@@ -1,5 +1,5 @@
-# 📊 Análisis de Algoritmos: Búsqueda Lineal vs Binaria
-## Análisis de Algoritmo y Notación Big O 
+# Análisis de Algoritmo y Notación Big O 
+## 📊 Análisis de Algoritmos: Búsqueda Lineal vs Binaria
 ## Módulo 2 - Clase N° 4   
 
 ## 🎯 Objetivo
@@ -228,9 +228,8 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 
 ## 👨‍💻 Autor
 
-**[Claudio Andrés Díaz Vargas]**  
-[Análisis de Algoritmo y Notación Big O /
-Módulo 2 - Clase N° 4]     
+**Claudio Andrés Díaz Vargas**  
+Análisis de Algoritmo y Notación Big O   
 [Año: 2025]
 
 ---
