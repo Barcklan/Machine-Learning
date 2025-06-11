@@ -56,10 +56,9 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 
 - **Peor caso (línea roja):** tiempo crece linealmente; el objetivo está al final de la lista.
 - **Caso medio (naranja):** tiempo medio; el objetivo está a mitad de lista.
-- **Mejor caso (verde):** tiempo constante; el objetivo está al inicio.
+- **Mejor caso (verde):** tiempo constante; el objetivo está al inicio. Esto representa que el valor fue encontrado en la primera posición: una sola comparación, por eso es el caso más rápido.
 
-> 📌 La búsqueda lineal es sensible a la posición del elemento y no escala bien con listas grandes.
-
+> 📌 La búsqueda lineal es sensible a la posición del elemento y no escala bien con listas grandes y se vuelve ineficiente.
 ### 🔎 Búsqueda Binaria (O(log n))
 
 - Todas las líneas (verde, naranja, roja) son similares y cercanas al eje horizontal.
