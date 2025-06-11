@@ -25,6 +25,17 @@ La notación Big O permite describir el **crecimiento del tiempo de ejecución**
 
 ---
 
+## Justificación de los algoritmos elegidos
+Se eligieron búsqueda lineal y búsqueda binaria por ser dos algoritmos clásicos, sencillos y ampliamente utilizados, con complejidades contrastantes:
+
+- La búsqueda lineal tiene una complejidad de O(n), ya que en el peor caso recorre todos los elementos de la lista.
+
+- La búsqueda binaria, por el contrario, tiene una complejidad de O(log n), ya que divide el espacio de búsqueda en mitades sucesivas.
+
+Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmica cambia dependiendo del enfoque y del tipo de estructura de datos (por ejemplo, si la lista está ordenada o no). Además, su implementación es simple, lo que los hace ideales para fines educativos y comparativos.
+
+---
+
 ## 🧪 Metodología
 
 1. Se generaron listas ordenadas de tamaños `10⁴`, `10⁵` y `10⁶`.
