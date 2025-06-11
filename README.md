@@ -78,13 +78,65 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 | Escalabilidad            | ❌ Mala               | ✅ Excelente          |
 
 ---
-      ´´# -----------------------------------------
-         # 3. Medición de tiempo para todos los casos
+      import timeit
+      import matplotlib.pyplot as plt
+
+      # -----------------------------
+      # 1. Implementación de Funciones de Búsqueda
+      # -----------------------------
+
+      def busqueda_lineal(lista, objetivo):
+          """
+          Realiza una búsqueda lineal en la lista.
+          Retorna el índice si encuentra el objetivo, o -1 si no lo encuentra.
+          Complejidad temporal: O(n)
+          """
+          for i in range(len(lista)):
+              if lista[i] == objetivo:
+                  return i
+          return -1
+
+      def busqueda_binaria(lista, objetivo):
+          """
+          Realiza una búsqueda binaria en una lista ordenada.
+          Retorna el índice si encuentra el objetivo, o -1 si no lo encuentra.
+          Complejidad temporal: O(log n)
+          """
+          izquierda = 0
+          derecha = len(lista) - 1
+
+          while izquierda <= derecha:
+              medio = (izquierda + derecha) // 2
+              if lista[medio] == objetivo:
+                  return medio
+              elif lista[medio] < objetivo:
+                  izquierda = medio + 1
+              else:
+                  derecha = medio - 1
+          return -1
+
+
+      # -----------------------------------------
+      # 2. Generación de datos
+      # -----------------------------------------
+
+      tamaños = [10**4, 10**5, 10**6]
+      listas = [list(range(t)) for t in tamaños]
+
+      # Generar objetivos para cada tipo de caso
+      objetivos = {
+          "mejor":   [lista[0] for lista in listas],                # Primer elemento
+          "medio":   [lista[len(lista)//2] for lista in listas],    # Elemento del medio
+          "peor":    [lista[-1] for lista in listas]                # Último elemento
+      }
+
+      # -----------------------------------------
+      # 3. Medición de tiempo para todos los casos
       # -----------------------------------------
 
       resultados = {
-    "lineal": {"mejor": [], "medio": [], "peor": []},
-    "binaria": {"mejor": [], "medio": [], "peor": []}
+          "lineal": {"mejor": [], "medio": [], "peor": []},
+          "binaria": {"mejor": [], "medio": [], "peor": []}
       }
 
       print(f"{'Caso':>6} | {'Tamaño':>10} | {'Lineal (s)':>12} | {'Binaria (s)':>12}")
@@ -92,19 +144,55 @@ Estos algoritmos permiten observar de forma clara cómo la eficiencia algorítmi
 
       for caso in ["mejor", "medio", "peor"]:
           for i in range(len(tamaños)):
-             lista = listas[i]
+              lista = listas[i]
               objetivo = objetivos[caso][i]
 
-        # Medir tiempos
-        t_lineal = timeit.timeit(lambda: busqueda_lineal(lista, objetivo), number=1)
-        t_binaria = timeit.timeit(lambda: busqueda_binaria(lista, objetivo), number=1)
+              # Medir tiempos
+              t_lineal = timeit.timeit(lambda: busqueda_lineal(lista, objetivo), number=1)
+              t_binaria = timeit.timeit(lambda: busqueda_binaria(lista, objetivo), number=1)
 
-        # Guardar resultados
-        resultados["lineal"][caso].append(t_lineal)
-        resultados["binaria"][caso].append(t_binaria)
+              # Guardar resultados
+              resultados["lineal"][caso].append(t_lineal)
+              resultados["binaria"][caso].append(t_binaria)
 
-        # Imprimir resultados
-        print(f"{caso:>6} | {tamaños[i]:>10,} | {t_lineal:>12.6f} | {t_binaria:>12.6f}")
+              # Imprimir resultados
+              print(f"{caso:>6} | {tamaños[i]:>10,} | {t_lineal:>12.6f} | {t_binaria:>12.6f}")
+
+      # -----------------------------------------
+      # 4. Gráfica comparativa
+      # -----------------------------------------
+
+      plt.figure(figsize=(12, 7))
+
+      # Colores para cada caso
+      colores = {
+          "mejor": "green",
+          "medio": "orange",
+          "peor": "red"
+      }   
+
+      # Graficar cada caso para ambos algoritmos
+      for caso in ["mejor", "medio", "peor"]:
+          plt.plot(tamaños, resultados["lineal"][caso], marker='o',
+                   linestyle='-', color=colores[caso],
+                   label=f'Lineal - {caso.title()} caso')
+
+          plt.plot(tamaños, resultados["binaria"][caso], marker='s',
+                   linestyle='--', color=colores[caso],
+                   label=f'Binaria - {caso.title()} caso')
+
+      # Configuración de la gráfica
+      plt.title("Comparación de Tiempos: Búsqueda Lineal vs Binaria (Mejor, Medio y Peor Caso)")
+      plt.xlabel("Tamaño de la Lista (n)")
+      plt.ylabel("Tiempo de Ejecución (segundos)")
+      plt.xscale('log')
+      plt.yscale('log')
+      plt.grid(True)
+      plt.legend()
+      plt.tight_layout()
+      plt.savefig("comparacion_todos_los_casos.png")
+      plt.show()
+
 ---
 
 ## 🖼 Capturas de Pantalla
