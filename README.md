@@ -1,5 +1,5 @@
-# Análisis de Algoritmo y Notación Big O 
-## 📊 Análisis de Algoritmos: Búsqueda Lineal vs Binaria
+# 📊 Análisis de Algoritmo y Notación Big O 
+##  Análisis de Algoritmos: Búsqueda Lineal vs Binaria
 ## Módulo 2 - Clase N° 4   
 
 ## 🎯 Objetivo
